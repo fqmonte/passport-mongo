@@ -17,7 +17,10 @@
     "passport": "~0.2.0",
     "passport-local": "~1.0.0",
     "mongoose": "~3.8.12",
-    "bcrypt-nodejs" : "*",
-    "connect-flash" : "*"
+    "bcrypt-nodejs": "*",
+    "connect-flash": "*"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }

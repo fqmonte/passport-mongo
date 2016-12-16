@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+    h1 Cadastrar Empresa
+    form(action="add" method="post")
+        input(type="text" name="nome" placeholder="Razão Social")
+        input(type="text" name="cnpj" placeholder="CNPJ")
+        input(type="text" name="email" placeholder="E-mail")
+        button.btn.btn-success(type="submit") Salvar

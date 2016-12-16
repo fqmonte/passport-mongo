@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+    a.btn.btn-default(href='empresa/new', role='button') Nova Empresa
+    h1 Lista de Empresas Cadastradas
+        table.table.table-striped.table-hover
+            thead
+                tr
+                    th #
+                    th Razão social
+                    th CNPJ
+                    th E-mail
+                    th Ações
+            tbody
+            each empresa, i in empresas
+                tr
+                    td #{i}
+                    td #{empresa.nome}
+                    td #{empresa.cnpj}
+                    td #{empresa.email}
+                    td 
+                        a.btn.btn-primary.btn-block(href="empresa/#{empresa._id}") Ver 
+                        a.btn.btn-warning.btn-block(href="#{empresa._id}") Editar
+                        a.btn.btn-danger.btn-block(href="#{empresa._id}") Apagar
+                        
+                        
+            

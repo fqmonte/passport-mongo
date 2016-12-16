@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var dbConfig = require('./db');
 var mongoose = require('mongoose');
+
 // Connect to DB
 mongoose.connect(dbConfig.url);
 
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Configuring Passport
 var passport = require('passport');
 var expressSession = require('express-session');
+
 // TODO - Why Do we need this key ?
 app.use(expressSession({secret: 'mySecretKey'}));
 app.use(passport.initialize());
@@ -41,7 +43,12 @@ var initPassport = require('./passport/init');
 initPassport(passport);
 
 var routes = require('./routes/index')(passport);
+var admin = require('./routes/admin');
+var empresa = require('./routes/empresa');
+
 app.use('/', routes);
+app.use('/admin', admin);
+app.use('/empresa', empresa);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
