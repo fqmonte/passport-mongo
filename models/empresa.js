@@ -6,6 +6,15 @@ module.exports = mongoose.model('Empresa', {
     nome: String,
     cnpj: String,
     endereco: String,
+    // Todo fazer busca por CEP para autopreencher campos
+    // endereco: {
+    //     cep: String,
+    //     logradouro: String,
+    //     complemento: String,
+    //     bairro: String,
+    //     cidade: String,
+    //     estado: String
+    // },
     telefone: String,
     email: String,
     senha: String,

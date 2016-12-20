@@ -1,6 +1,9 @@
 extends ../layout
 
 block content
-    h1 #{empresa}
+    a.btn.btn-default(href="/empresa") Voltar a lista
     
-    
+    h1 Id: #{empresa._id}
+    h1 Nome: #{empresa.nome}
+    h1 CNPJ: #{empresa.cnpj}
+    h1 E-mail: #{empresa.email}

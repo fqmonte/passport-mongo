@@ -3,7 +3,34 @@ extends ../layout
 block content
     h1 Cadastrar Empresa
     form(action="add" method="post")
-        input(type="text" name="nome" placeholder="Razão Social")
-        input(type="text" name="cnpj" placeholder="CNPJ")
-        input(type="text" name="email" placeholder="E-mail")
-        button.btn.btn-success(type="submit") Salvar
+        h2 Dados da Empresa
+        .form-group.col-md-6
+            label Nome da Empresa
+            input.form-control(type="text" name="nome" placeholder="Razão Social")
+        .form-group.col-md-6
+            label C.N.P.J.
+            input.form-control(type="text" name="cnpj" placeholder="CNPJ")
+        .form-group.col-md-12
+            label Endereço completo
+            input.form-control(type="text" name="endereco" placeholder="Endereço completo (Rua, Bairro, Cidade, Cep e etc)")
+        .form-group.col-md-4
+            label Telefone
+            input.form-control(type="text" name="telefone" placeholder="Telefone")
+        .form-group.col-md-4
+            label E-mail
+            input.form-control(type="text" name="email" placeholder="E-mail")
+        .form-group.col-md-4
+            label Senha
+            input.form-control(type="password" name="senha" placeholder="Senha")
+        hr
+        h2 Dados do Contato
+        .form-group.col-md-4
+            label Telefone
+            input.form-control(type="text" name="telefone" placeholder="Telefone")
+        .form-group.col-md-4
+            label E-mail
+            input.form-control(type="text" name="email" placeholder="E-mail")
+        .form-group.col-md-4
+            label Senha
+            input.form-control(type="password" name="senha" placeholder="Senha")
+            button.btn.btn-success(type="submit") Salvar
