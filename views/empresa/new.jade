@@ -23,14 +23,37 @@ block content
             label Senha
             input.form-control(type="password" name="senha" placeholder="Senha")
         hr
+        
         h2 Dados do Contato
         .form-group.col-md-4
             label Telefone
-            input.form-control(type="text" name="telefone" placeholder="Telefone")
+            input.form-control(type="text" name="contato[0][telefone]" placeholder="Telefone")
         .form-group.col-md-4
             label E-mail
-            input.form-control(type="text" name="email" placeholder="E-mail")
+            input.form-control(type="text" name="contato[0][email]" placeholder="E-mail")
         .form-group.col-md-4
             label Senha
-            input.form-control(type="password" name="senha" placeholder="Senha")
-            button.btn.btn-success(type="submit") Salvar
+            input.form-control(type="password" name="contato[0][senha]" placeholder="Senha")        
+        hr        
+        h2 Dados do Responsável
+        .form-group.col-md-4
+            label Nome
+            input.form-control(type="text" name="responsavel[0][nome]" placeholder="Nome")
+        .form-group.col-md-4
+            label Sobrenome
+            input.form-control(type="text" name="responsavel[0][sobrenome]" placeholder="Sobrenome")
+        .form-group.col-md-4
+            label CPF/CNPJ
+            input.form-control(type="text" name="responsavel[0][cpfcnpj]" placeholder="CPF/CNPJ")
+        .form-group.col-md-4
+            label Telefone
+            input.form-control(type="text" name="responsavel[0][telefone]" placeholder="Telefone")
+        .form-group.col-md-4
+            label E-mail
+            input.form-control(type="text" name="responsavel[0][email]" placeholder="E-mail")
+        .form-group.col-md-4
+            label Senha
+            input.form-control(type="password" name="responsavel[0][senha]" placeholder="Senha")
+        .form-group.col-md-4
+            button.btn.btn-success(type="submit") Salvar 
+            a.btn.btn-danger(href="/empresa") Voltar

@@ -28,13 +28,23 @@ router.post('/add', function (req, res, next) {
     });
 });
 
-router.get('/:id', function (req, res, next) {
+router.get('/info/:id', function (req, res, next) {
     var id = req.params.id;
     model.findById(id, function (err, empresa) {
         if (err) {
             throw err;
         }
         res.render('empresa/info', { empresa: empresa });
+    });
+});
+
+router.get('/remove/:id', function (req, res, next) {
+    var id = req.params.id;
+    model.findByIdAndRemove(id, function (err, empresa) {
+        if (err) {
+            throw err;
+        }
+        res.redirect('/empresa');
     });
 });
 
