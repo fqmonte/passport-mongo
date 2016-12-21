@@ -1,0 +1,59 @@
+extends ../layout
+
+block content
+    h1 Cadastrar Empresa
+    form(action="/empresa/update/#{empresa._id}" method="post")
+        h2 Dados da Empresa
+        .form-group.col-md-6
+            label Nome da Empresa
+            input.form-control(type="text" name="nome" value="#{empresa.nome}")
+        .form-group.col-md-6
+            label C.N.P.J.
+            input.form-control(type="text" name="cnpj" value="#{empresa.cnpj}")
+        .form-group.col-md-12
+            label Endereço completo
+            input.form-control(type="text" name="endereco" value="#{empresa.endereco}")
+        .form-group.col-md-4
+            label Telefone
+            input.form-control(type="text" name="telefone" value="#{empresa.telefone}")
+        .form-group.col-md-4
+            label E-mail
+            input.form-control(type="text" name="email" value="#{empresa.email}")
+        .form-group.col-md-4
+            label Senha
+            input.form-control(type="password" name="senha" value="#{empresa.senha}")
+        hr
+        
+        h2 Dados do Contato
+        .form-group.col-md-4
+            label Nome
+            input.form-control(type="text" name="contato[0][nome]" value="#{empresa.contato[0].nome}")
+        .form-group.col-md-4
+            label E-mail
+            input.form-control(type="text" name="contato[0][email]" value="#{empresa.contato[0].nome}")
+        .form-group.col-md-4
+            label Telefone
+            input.form-control(type="text" name="contato[0][telefone]" value="#{empresa.contato[0].nome}")        
+        hr        
+        h2 Dados do Responsável
+        .form-group.col-md-4
+            label Nome
+            input.form-control(type="text" name="responsavel[0][nome]" value="#{empresa.responsavel[0].nome}")
+        .form-group.col-md-4
+            label Sobrenome
+            input.form-control(type="text" name="responsavel[0][sobrenome]" value="#{empresa.responsavel[0].sobrenome}")
+        .form-group.col-md-4
+            label CPF/CNPJ
+            input.form-control(type="text" name="responsavel[0][cpfcnpj]" value="#{empresa.responsavel[0].cpfcnpj}")
+        .form-group.col-md-4
+            label Telefone
+            input.form-control(type="text" name="responsavel[0][telefone]" value="#{empresa.responsavel[0].telefone}")
+        .form-group.col-md-4
+            label E-mail
+            input.form-control(type="text" name="responsavel[0][email]" value="#{empresa.responsavel[0].email}")
+        .form-group.col-md-4
+            label Senha
+            input.form-control(type="password" name="responsavel[0][senha]" value="#{empresa.responsavel[0].senha}")
+        .form-group.col-md-4
+            button.btn.btn-success(type="submit") Salvar 
+            a.btn.btn-danger(href="/empresa") Voltar

@@ -19,11 +19,13 @@ module.exports = mongoose.model('Empresa', {
     email: String,
     senha: String,
     contato: [{
+        id: String,
         nome: String,
         email: String,
         telefone: String
     }],
     responsavel: [{
+        id: String,
         nome: String,
         sobrenome: String,
         cpfcnpj: Number,
