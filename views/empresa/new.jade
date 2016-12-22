@@ -1,6 +1,6 @@
 extends ../layout
 
-block content
+block content    
     h1 Cadastrar Empresa
     form(action="add" method="post")
         h2 Dados da Empresa
@@ -34,26 +34,54 @@ block content
         .form-group.col-md-4
             label Telefone
             input.form-control(type="text" name="contato[0][telefone]" placeholder="Telefone do contato")        
-        hr        
-        h2 Dados do Responsável
-        .form-group.col-md-4
-            label Nome
-            input.form-control(type="text" name="responsavel[0][nome]" placeholder="Nome")
-        .form-group.col-md-4
-            label Sobrenome
-            input.form-control(type="text" name="responsavel[0][sobrenome]" placeholder="Sobrenome")
-        .form-group.col-md-4
-            label CPF/CNPJ
-            input.form-control(type="text" name="responsavel[0][cpfcnpj]" placeholder="CPF/CNPJ")
-        .form-group.col-md-4
-            label Telefone
-            input.form-control(type="text" name="responsavel[0][telefone]" placeholder="Telefone")
-        .form-group.col-md-4
-            label E-mail
-            input.form-control(type="text" name="responsavel[0][email]" placeholder="E-mail")
-        .form-group.col-md-4
-            label Senha
-            input.form-control(type="password" name="responsavel[0][senha]" placeholder="Senha")
-        .form-group.col-md-4
-            button.btn.btn-success(type="submit") Salvar 
-            a.btn.btn-danger(href="/empresa") Voltar
+        hr       
+        br
+        a.btn.btn-success(href='#') Adicionar Responsável
+        br
+        #box
+        br
+        
+        button.btn.btn-success(type="submit") Salvar 
+        a.btn.btn-danger(href="/empresa") Voltar
+
+        script.
+            $(function () {
+            var counter = 0;
+            $('a').click(function () {
+            var elems =             
+            '<div class="row jumbotron">'+
+              '<h2> Dados do Responsável ' + (counter + 1) + '</h2>' + 
+              '<div class="form-group col-md-4">'+
+              '<label>Nome </label>'+
+              '<input class="form-control" type="text" name="responsavel['+ counter +'][nome]" value="'+ counter +'">'+
+              '</div>'+               
+              '<div class="form-group col-md-4">'+
+              '<label>Sobrenome </label>'+
+              '<input class="form-control" type="text" name="responsavel['+ counter +'][sobrenome]" value="'+ counter +'">'+
+              '</div>'+               
+              '<div class="form-group col-md-4">'+
+              '<label>CPF/CNPJ </label>'+
+              '<input class="form-control" type="text" name="responsavel['+ counter +'][cpfcnpj]" value="'+ counter +'">'+
+              '</div>'+               
+              '<div class="form-group col-md-4">'+
+              '<label>Telefone </label>'+
+              '<input class="form-control" type="text" name="responsavel['+ counter +'][telefone]" value="'+ counter +'">'+
+              '</div>'+               
+              '<div class="form-group col-md-4">'+
+              '<label>E-mail </label>'+
+              '<input class="form-control" type="text" name="responsavel['+ counter +'][email]" value="'+ counter +'">'+
+              '</div>'+               
+              '<div class="form-group col-md-4">'+
+              '<label>Senha </label>'+
+              '<input class="form-control" type="text" name="responsavel['+ counter +'][senha]" value="'+ counter +'">'+
+              '</div>'+               
+            '</div>';               
+            $('#box').append(elems);            
+            counter++;
+            return false;
+            });
+            $('.removebtn').live('click',function () {
+            $(this).parent().remove();
+            });
+            });
+        
