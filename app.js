@@ -45,10 +45,12 @@ initPassport(passport);
 var routes = require('./routes/index')(passport);
 var admin = require('./routes/admin');
 var empresa = require('./routes/empresa');
+var responsavel = require('./routes/responsavel');
 
 app.use('/', routes);
 app.use('/admin', admin);
 app.use('/empresa', empresa);
+app.use('/responsavel', responsavel);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

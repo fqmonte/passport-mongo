@@ -1,11 +1,20 @@
 extends ../layout
 
 block content
-    a.btn.btn-default(href="/empresa") Voltar a lista
-    
-    h1 Id: #{empresa._id}
-    h1 Nome: #{empresa.nome}
-    h1 CNPJ: #{empresa.cnpj}
-    h1 E-mail: #{empresa.email}
-    h1 Telefone: #{empresa.telefone}
-    h1 Contato: #{empresa.contato[0].telefone}
+    .col-md-12
+        a.btn.btn-default(href="/empresa") Voltar a lista    
+    .col-md-6
+        h3 Id: #{empresa._id}
+        h3 Nome: #{empresa.nome}
+        h3 CNPJ: #{empresa.cnpj}
+        h3 E-mail: #{empresa.email}
+        h3 Telefone: #{empresa.telefone}
+        h2 Contato
+        h3 Nome: #{empresa.contato[0].nome}
+        h3 E-mail: #{empresa.contato[0].email}
+        h3 Telefone: #{empresa.contato[0].telefone}
+    .col-md-6
+        each responsavel, i in empresa.responsavel
+            h2 Responsável
+                h3 Nome: #{responsavel.nome} #{responsavel.sobrenome}                                     
+                h3 E-mail: #{responsavel.email}

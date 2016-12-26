@@ -36,7 +36,7 @@ block content
             input.form-control(type="text" name="contato[0][telefone]" placeholder="Telefone do contato")        
         hr       
         br
-        a.btn.btn-success(href='#') Adicionar Responsável
+        a.btn.btn-success(href='#') Adicionar Responsável        
         br
         #box
         br
@@ -62,19 +62,19 @@ block content
               '<div class="form-group col-md-4">'+
               '<label>CPF/CNPJ </label>'+
               '<input class="form-control" type="text" name="responsavel['+ counter +'][cpfcnpj]" value="'+ counter +'">'+
-              '</div>'+               
+              '</div>'+
               '<div class="form-group col-md-4">'+
               '<label>Telefone </label>'+
               '<input class="form-control" type="text" name="responsavel['+ counter +'][telefone]" value="'+ counter +'">'+
-              '</div>'+               
+              '</div>'+
               '<div class="form-group col-md-4">'+
               '<label>E-mail </label>'+
               '<input class="form-control" type="text" name="responsavel['+ counter +'][email]" value="'+ counter +'">'+
-              '</div>'+               
+              '</div>'+
               '<div class="form-group col-md-4">'+
               '<label>Senha </label>'+
               '<input class="form-control" type="text" name="responsavel['+ counter +'][senha]" value="'+ counter +'">'+
-              '</div>'+               
+              '</div>'+
             '</div>';               
             $('#box').append(elems);            
             counter++;

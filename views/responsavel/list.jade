@@ -1,0 +1,11 @@
+extends ../layout
+
+block content    
+    h1 Lista de Responsáveis
+        each empresa, i in empresas
+            h1 Empresa: #{empresa.nome}
+            each responsavel, i in empresa.responsavel
+                div Nome: #{responsavel.nome} #{responsavel.sobrenome}                                     
+                div E-mail: #{responsavel.email}                        
+                        
+            
