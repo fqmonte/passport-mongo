@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var model = require('./../models/empresa');
+var bCrypt = require('bcrypt-nodejs');
 
 
 /* lista de empresas */
@@ -20,14 +21,20 @@ router.get('/new', function (req, res, netx) {
 
 /* save empresa no mongodb */
 router.post('/add', function (req, res, next) {
-    var body = req.body;
+    var senhaCodificada = createHash(req.body.senha);
+    var body = JSON.stringify(req.body).replace(req.body.senha, senhaCodificada);
     body.status = false;
-    model.create(body, function (err, empresa) {
+    objBody = JSON.parse(body);
+    console.log(objBody);
+    // console.log(senhaEncodeEmpresa);
+
+    model.create(objBody, function (err, empresa) {
         if (err) {
             throw err;
         }
         res.redirect('/empresa');
     });
+
 });
 
 /* informacoes de uma empresa por id */
@@ -64,7 +71,7 @@ router.get('/edit/:id', function (req, res, next) {
 
 router.post('/update/:id', function (req, res, next) {
     var id = req.params.id;
-    var body = req.body;    
+    var body = req.body;
     model.findByIdAndUpdate(id, body, function (err, empresa) {
         if (err) {
             throw err;
@@ -73,5 +80,9 @@ router.post('/update/:id', function (req, res, next) {
     });
 });
 
+// Generates hash using bCrypt
+var createHash = function (password) {
+    return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
+}
 
 module.exports = router;

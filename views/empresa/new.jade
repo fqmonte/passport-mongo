@@ -44,44 +44,44 @@ block content
         button.btn.btn-success(type="submit") Salvar 
         a.btn.btn-danger(href="/empresa") Voltar
 
-        script.
-            $(function () {
-            var counter = 0;
-            $('a').click(function () {
-            var elems =             
-            '<div class="row jumbotron">'+
-              '<h2> Dados do Responsável ' + (counter + 1) + '</h2>' + 
-              '<div class="form-group col-md-4">'+
-              '<label>Nome </label>'+
-              '<input class="form-control" type="text" name="responsavel['+ counter +'][nome]" value="'+ counter +'">'+
-              '</div>'+               
-              '<div class="form-group col-md-4">'+
-              '<label>Sobrenome </label>'+
-              '<input class="form-control" type="text" name="responsavel['+ counter +'][sobrenome]" value="'+ counter +'">'+
-              '</div>'+               
-              '<div class="form-group col-md-4">'+
-              '<label>CPF/CNPJ </label>'+
-              '<input class="form-control" type="text" name="responsavel['+ counter +'][cpfcnpj]" value="'+ counter +'">'+
-              '</div>'+
-              '<div class="form-group col-md-4">'+
-              '<label>Telefone </label>'+
-              '<input class="form-control" type="text" name="responsavel['+ counter +'][telefone]" value="'+ counter +'">'+
-              '</div>'+
-              '<div class="form-group col-md-4">'+
-              '<label>E-mail </label>'+
-              '<input class="form-control" type="text" name="responsavel['+ counter +'][email]" value="'+ counter +'">'+
-              '</div>'+
-              '<div class="form-group col-md-4">'+
-              '<label>Senha </label>'+
-              '<input class="form-control" type="text" name="responsavel['+ counter +'][senha]" value="'+ counter +'">'+
-              '</div>'+
-            '</div>';               
-            $('#box').append(elems);            
-            counter++;
-            return false;
-            });
-            $('.removebtn').live('click',function () {
-            $(this).parent().remove();
-            });
-            });
+        //- script.
+        //-     $(function () {
+        //-     var counter = 0;
+        //-     $('a').click(function () {
+        //-     var elems =             
+        //-     '<div class="row jumbotron">'+
+        //-       '<h2> Dados do Responsável ' + (counter + 1) + '</h2>' + 
+        //-       '<div class="form-group col-md-4">'+
+        //-       '<label>Nome </label>'+
+        //-       '<input class="form-control" type="text" name="responsavel['+ counter +'][nome]" value="'+ counter +'">'+
+        //-       '</div>'+               
+        //-       '<div class="form-group col-md-4">'+
+        //-       '<label>Sobrenome </label>'+
+        //-       '<input class="form-control" type="text" name="responsavel['+ counter +'][sobrenome]" value="'+ counter +'">'+
+        //-       '</div>'+               
+        //-       '<div class="form-group col-md-4">'+
+        //-       '<label>CPF/CNPJ </label>'+
+        //-       '<input class="form-control" type="text" name="responsavel['+ counter +'][cpfcnpj]" value="'+ counter +'">'+
+        //-       '</div>'+
+        //-       '<div class="form-group col-md-4">'+
+        //-       '<label>Telefone </label>'+
+        //-       '<input class="form-control" type="text" name="responsavel['+ counter +'][telefone]" value="'+ counter +'">'+
+        //-       '</div>'+
+        //-       '<div class="form-group col-md-4">'+
+        //-       '<label>E-mail </label>'+
+        //-       '<input class="form-control" type="text" name="responsavel['+ counter +'][email]" value="'+ counter +'">'+
+        //-       '</div>'+
+        //-       '<div class="form-group col-md-4">'+
+        //-       '<label>Senha </label>'+
+        //-       '<input class="form-control" type="text" name="responsavel['+ counter +'][senha]" value="'+ counter +'">'+
+        //-       '</div>'+
+        //-     '</div>';               
+        //-     $('#box').append(elems);            
+        //-     counter++;
+        //-     return false;
+        //-     });
+        //-     $('.removebtn').live('click',function () {
+        //-     $(this).parent().remove();
+        //-     });
+        //-     });
         
