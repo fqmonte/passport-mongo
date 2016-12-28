@@ -24,10 +24,7 @@ router.post('/add', function (req, res, next) {
     var senhaCodificada = createHash(req.body.senha);
     var body = JSON.stringify(req.body).replace(req.body.senha, senhaCodificada);
     body.status = false;
-    objBody = JSON.parse(body);
-    console.log(objBody);
-    // console.log(senhaEncodeEmpresa);
-
+    objBody = JSON.parse(body);    
     model.create(objBody, function (err, empresa) {
         if (err) {
             throw err;
